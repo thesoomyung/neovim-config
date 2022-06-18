@@ -80,10 +80,7 @@ local opts = {
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Buffers",
-  },
+  ["b"] = { "<cmd>BLines<cr>", "BLines" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
@@ -95,6 +92,7 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["r"] = { "<cmd>TagbarToggle<cr>", "Tagbar" },
 
   p = {
     name = "Packer",
