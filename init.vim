@@ -28,7 +28,7 @@ let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
 
 " seoul256
-let g:seoul256_background=233
+let g:seoul256_background=234
 colo seoul256
 
 " vim highlight
@@ -53,3 +53,9 @@ command! -bang -nargs=* BLines
   \ call fzf#vim#grep(
   \   'rg --with-filename --column --line-number --no-heading --color=always --smart-case . '.fnameescape(expand('%:p')), 1,
   \   fzf#vim#with_preview(), <bang>0)
+
+" cursorline
+set cursorline
+hi cursorline guibg=#000000 ctermbg=0
+autocmd InsertEnter * hi cursorline cterm=underline
+autocmd InsertLeave * hi cursorline guibg=#000000 ctermbg=0 cterm=NONE
