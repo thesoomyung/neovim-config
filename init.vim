@@ -11,7 +11,7 @@ call plug#begin()
 
 " Make sure you use single quotes
 
-Plug 'justinmk/vim-sneak'
+Plug 'easymotion/vim-easymotion'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -24,9 +24,21 @@ Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 " Initialize plugin system
 call plug#end()
 
-" sneak
-let g:sneak#label = 1
-let g:sneak#use_ic_scs = 1
+" easy-motion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+
 
 " seoul256
 let g:seoul256_background=234
@@ -70,3 +82,6 @@ set cursorline
 hi cursorline guibg=#000000 ctermbg=0
 autocmd InsertEnter * hi cursorline cterm=underline
 autocmd InsertLeave * hi cursorline guibg=#000000 ctermbg=0 cterm=NONE
+
+set foldmethod=indent
+set foldlevel=99
