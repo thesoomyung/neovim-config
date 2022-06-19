@@ -12,6 +12,9 @@ call plug#begin()
 " Make sure you use single quotes
 
 Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -33,6 +36,12 @@ nmap s <Plug>(easymotion-overwin-f2)
 
 " Turn on case-insensitive feature
 let g:EasyMotion_smartcase = 1
+
+" incsearch-fuzzy
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
+
 
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
