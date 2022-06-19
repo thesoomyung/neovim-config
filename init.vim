@@ -19,6 +19,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'azabiong/vim-highlighter'
 Plug 'dominikduda/vim_current_word'
 Plug 'preservim/tagbar'
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Initialize plugin system
 call plug#end()
